@@ -215,7 +215,7 @@ By default the node runs on port :8080. This isn't great if you do other develop
 > [!TIP]
 > Restart your service after making config changes
 
-`sudo nano ~/node/data/config.json`
+`cp ~/node/data/config.example.json ~/node/data/config.json && nano ~/node/data/config.json`
 
 Type `control + w` to search type `EndpointAddress` then `enter` and then change endpoint address to:
 
