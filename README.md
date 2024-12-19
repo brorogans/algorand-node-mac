@@ -233,7 +233,7 @@ Also, there are a lot of commands to remember, so I set alias's for each in my b
 alias algostat="goal node status"
 alias algostart="goal node start"
 alias algostop="goal node stop"
-alias algorestart="goal node stop && goal node start"
+alias algorestart="goal node restart"
 alias algowatch="goal node status -w 1000"
 alias algocatchup="goal node catchup $(curl https://algorand-catchpoints.s3.us-east-2.amazonaws.com/channel/mainnet/latest.catchpoint)"
 alias algoserviceup="launchctl load ~/Library/LaunchAgents/com.algorand.updater.plist && launchctl load ~/Library/LaunchAgents/com.algorand.daemon.plist"
