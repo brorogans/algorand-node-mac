@@ -94,7 +94,7 @@ Back in the terminal run:
 
 `sudo nano ~/Library/LaunchAgents/com.algorand.daemon.plist`
 
-```plist
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -105,7 +105,7 @@ Back in the terminal run:
         <array>
             <string>/bin/bash</string>
             <string>-c</string>
-            <string>echo '{"shared_server":true}' > /Users/***username***/node/data/system.json && /Users/***username***/node/algod -d /Users/***username***/node/data & /Users/***username***/node/kmd start -d /Users/***username***/node/data/kmd-v0.5</string>
+            <string>echo '{"shared_server":true}' > /Users/***username***/node/data/system.json && /Users/***username***/node/algod -d /Users/***username***/node/data & sleep 2 && chmod 644 /Users/***username***/node/data/algod.net /Users/***username***/node/data/algod.token && /Users/***username***/node/kmd start -d /Users/***username***/node/data/kmd-v0.5</string>
         </array>
         <key>RunAtLoad</key>
         <true/>
@@ -124,6 +124,8 @@ Back in the terminal run:
         <string>/Users/***username***/node/servicelogs/daemon.out</string>
         <key>WorkingDirectory</key>
         <string>/Users/***username***/node</string>
+        <key>UserName</key>
+        <string>***username***</string>
         <key>EnvironmentVariables</key>
         <dict>
             <key>PATH</key>
@@ -131,6 +133,7 @@ Back in the terminal run:
         </dict>
     </dict>
 </plist>
+
 
 ```
 
@@ -141,7 +144,7 @@ and now :
 
 `sudo nano ~/Library/LaunchAgents/com.algorand.updater.plist`
 
-```plist
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -240,7 +243,7 @@ alias algoservice="launchctl list | grep algorand"
 alias algonode="cd ~/node"
 ```
 
-then restart your bash profile
+then restart your bash profile and your node services `algoservicerestart`
 
 `exec zsh`
 
