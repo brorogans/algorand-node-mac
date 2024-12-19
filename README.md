@@ -43,7 +43,7 @@ export PATH="$HOME/node:$PATH"
 Open a terminal window and run
 
 > [!IMPORTANT]
-> If you want to run as a service, set that up first then come back here and ignore the first step (`goal node start`)
+> If you want to run as a service, [set that up first](#install-as-a-service) then come back here and ignore the first step (`goal node start`)
 
 ```shell
 goal node start
@@ -83,7 +83,7 @@ When `Sync Time: 0.0` your node is ready
 
 ## Install as a service
 
-In the meantime, lets make a background-service that will auto restart the node on failure and check for updates once an hour.
+Lets make a background-service that will auto restart the node on failure and check for updates once an hour.
 
 > [!TIP]
 > Make sure to replace `***username***` with your mac username.
@@ -243,7 +243,7 @@ alias algoservice="launchctl list | grep algorand"
 alias algonode="cd ~/node"
 ```
 
-then restart your bash profile and your node services `algoservicerestart`
+then restart your bash profile
 
 `exec zsh`
 
@@ -282,7 +282,7 @@ Or you can make your name public by prefixing it with @
 Now you will see some output like
 
 ```shell
-Telemetry logging: Name = @username, Guid = 123456789-f75f-4fc6-815d-a55c88c3bb66, URI = https://tel.4160.nodely.io
+Telemetry logging: Name = @username, Guid = 123456789-f12f-4ff4-8f8d-a55h4tc415o, URI = https://tel.4160.nodely.io
 ```
 
 Copy the GUID and visit
