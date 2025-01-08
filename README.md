@@ -215,7 +215,7 @@ By default the node runs on port :8080. This isn't great if you do other develop
 > [!TIP]
 > Restart your service after making config changes
 
-`cp ~/node/data/config.example.json ~/node/data/config.json && nano ~/node/data/config.json`
+`cp ~/node/data/config.json.example ~/node/data/config.json && nano ~/node/data/config.json`
 
 Type `control + w` to search type `EndpointAddress` then `enter` and then change endpoint address to:
 
@@ -224,6 +224,18 @@ Type `control + w` to search type `EndpointAddress` then `enter` and then change
   "EndpointAddress": "127.0.0.1:4001"
 }
 ```
+
+It is recommended to set a soft limit on `algod` memory (with respect to your system memory).
+
+Type `control + w` to search type `GoMemLimit` then `enter` and then change the `0` limit to your limit (`bytes`):
+
+```json
+{
+  "GoMemLimit": "0"
+}
+```
+
+> Example: if you are on 16 GB RAM system and want to limit `algod` to 15 GB then set `"GoMemLimit": "15000000000"`.
 
 Also, there are a lot of commands to remember, so I set alias's for each in my bash config (I use zsh, you may need to do this for your .bash_profile instead)
 
